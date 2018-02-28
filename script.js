@@ -22,7 +22,20 @@ var continents = {
                 'ZAF', 'ZWE', 'SSD', 'ESH', 'SDN', 'SWZ', 'TGO', 'TUN', 'UGA', 'EGY', 'TZA', 'BFA', 'ZMB']
     },
     north_america: {
-        projection: "",
+               projection: function (element) {
+            var projection = d3.geo.equirectangular()
+                .center([-90, 40])
+                .rotate([4.4, 0])
+                .scale(400)
+                .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+            var path = d3.geo.path()
+                .projection(projection);
+
+            return {
+                path: path,
+                projection: projection
+            };
+        },
         codes: ['ATG', 'BHS', 'BRB', 'BMU', 'BLZ', 'VGB', 'CAN', 'CYM', 'CRI',
                     'CUB', 'DMA', 'DOM', 'SLV', 'GRL', 'GRD', 'GLP', 'GTM', 'HTI',
                     'HND', 'JAM', 'MTQ', 'MEX', 'MSR', 'ANT', 'CUW', 'ABW', 'SXM',
@@ -30,13 +43,26 @@ var continents = {
                     'MAF', 'SPM', 'VCT', 'TTO', 'TCA', 'USA', 'VIR']
     },
     south_america: {
-        projection: "",
+                projection: function (element) {
+            var projection = d3.geo.equirectangular()
+                .center([-50, -20])
+                .rotate([4.4, 0])
+                .scale(450)
+                .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+            var path = d3.geo.path()
+                .projection(projection);
+
+            return {
+                path: path,
+                projection: projection
+            };
+        },
         codes: ['ARG', 'BOL', 'BRA', 'CHL', 'COL', 'ECU', 'FLK', 'GUF', 'GUY', 'PRY', 'PER', 'SUR', 'URY', 'VEN']
     },
     europe: {
         projection: function (element) {
             var projection = d3.geo.equirectangular()
-                .center([10, 50])
+                .center([20, 50])
                 .rotate([4.4, 0])
                 .scale(800)
                 .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
@@ -56,7 +82,19 @@ var continents = {
                 'SWE', 'CHE', 'TUR', 'UKR', 'MKD', 'GBR', 'GGY', 'JEY', 'IMN']
     },
     asia: {
-        projection: "",
+                projection: function (element) {
+            var projection = d3.geo.equirectangular()
+                .center([100 , 38])
+                .rotate([4.4, 0])
+                .scale(350)
+                .translate([element.offsetWidth / 2, element.offsetHeight / 2]);
+            var path = d3.geo.path()
+                .projection(projection);
+            return {
+                path: path,
+                projection: projection
+            }
+        },
         codes: ['AFG', 'AZE', 'BHR', 'BGD', 'ARM', 'BTN', 'IOT', 'BRN', 'MMR', 'KHM',
                                    'LKA', 'CHN', 'TWN', 'CXR', 'CCK', 'CYP', 'GEO', 'PSE', 'HKG', 'IND',
                                    'IDN', 'IRN', 'IRQ', 'ISR', 'JPN', 'KAZ', 'JOR', 'PRK', 'KOR', 'KWT',
@@ -76,7 +114,13 @@ var continents = {
     }
 };
 // DECLARE CONTINENT FROM QUERY STRING
-var continent = "africa";
+var view = window.location.href.split("?")[1];
+var continent;
+if (Object.keys(continents).includes(view))
+    continent = view;
+else
+    continent = 'undefined';
+
 
 var countries = {};
 
@@ -112,10 +156,9 @@ function makeMap() {
     var map = new Datamap({
         scope: 'world',
         element: document.getElementById('container1'),
-        projection: 'mercator',
-        height: 600,
+        height: '95vh',
         fills: {
-            defaultFill: 'lightblue'
+            defaultFill: '#ABDDA4'
         },
         setProjection: continents[continent].projection,
         geographyConfig: {
@@ -129,20 +172,13 @@ function makeMap() {
             //        },
             //        popupOnHover: true, //disable the popup while hovering
             highlightOnHover: true,
-            highlightFillColor: 'black',
+            highlightFillColor: '#FC8D59',
             highlightBorderColor: 'rgba(250, 15, 160, 0.2)',
             //        highlightBorderWidth: 2,
             //        highlightBorderOpacity: 1
         },
         data: {
-            //          RUS: {fillKey: 'lt50' },
-            //          CAN: {fillKey: 'lt50' },
-            //          BRA: {fillKey: 'gt50' },
-            //          ARG: {fillKey: 'gt50'},
-            //          COL: {fillKey: 'gt50' },
-            //          AUS: {fillKey: 'gt50' },
-            //          ZAF: {fillKey: 'gt50' },
-            //          MAD: {fillKey: 'gt50' }
+            //          RUS: {fillKey: 'lt50' }, //example
         }
     })
 }
@@ -175,22 +211,6 @@ function addListeners(continent) {
 }
 
 var template = Handlebars.compile(document.querySelector('#country_popup').innerHTML);
-//
-//var countries = {
-//    SDN: {
-//        name: "Sudan",
-//        political: ["Freedomhouse score: 8/100 (2018)", "Type of Government: Presidential Republic"],
-//        geography: ["Capital: Khartoum", "Primary natural resources: Petroleum, small reserves of iron ore, copper, chromium ore, zinc,tungsten, mica, silver, gold", "Topography: generally flat, featureless plain; desert dominates the north", "Climate: hot and dry; arid desert; rainy season varies by region (April to November)"],
-//        health: ["Life expectancy: 64.4 years (2017)", "Infant mortality rate: 48.8 deaths/ 1000 live births (2017)", "Primary Causes of Death: 1-Influenza and Pneumonia, 2- Stroke, 3-Diarrhoeal diseases, 4-Coronary Heart Disease, 5- Malnutrition. (2017)"],
-//        economic: ["GDP per capita: $4,600 (2017 est.)", "Currency-Exchange rate: 18.06 Sudanese Pounds to 1 U.S Dollar (Feb 2018)", "Big Mac Index:  N/A", "GDP growth by country Income inequality: 3.6% (2018)", "Income Inequality:"],
-//        business: ["Corruption Perceptions Index: 14 and 170th /176 (2016)", "Heritage Index of Economic Freedom: 49.4 overall (2018)"],
-//        general: ["Literacy Rate: 75.9% (2015)",
-//"Religions: Sunni Muslim, small Christian minority",
-//"languages: Arabic (official), English (official), Nubian, Ta Bedawie, Fur",
-//"Population: 37,345,935 (July 2017)"]
-//    }
-//};
-
 
 
 function cancel_cancel(event) {
