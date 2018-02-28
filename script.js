@@ -205,7 +205,7 @@ function addListeners(continent) {
                 createpopup(code);
                 event.preventDefault();
     },false);
-                document.querySelector("." + code).addEventListener("touchstart",function (event) {
+                document.querySelector("." + code).addEventListener("touchend",function (event) {
         createpopup(code);
     event.preventDefault();
     },false);
@@ -213,7 +213,7 @@ function addListeners(continent) {
         }
     });
 
-    document.querySelector("#popup").addEventListener("touchstart",function (event) {
+    document.querySelector("#popup").addEventListener("touchend",function (event) {
         this.classList.add("hidden");
     event.preventDefault();
     },false);
@@ -223,7 +223,7 @@ function addListeners(continent) {
     },false);
 
     document.querySelector("#popup_insides").addEventListener('click', cancel_cancel)
-        document.querySelector("#popup_insides").addEventListener("touchstart", cancel_cancel);
+        document.querySelector("#popup_insides").addEventListener("touchend", cancel_cancel);
 }
 
 var template = Handlebars.compile(document.querySelector('#country_popup').innerHTML);
