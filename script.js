@@ -1,7 +1,7 @@
 var continents = {
     africa: {
         projection: function (element) {
-            var projection = d3.geo.equirectangular()
+            var projection = d3.geo.mercator()
                 .center([23, -3])
                 .rotate([4.4, 0])
                 .scale(400)
@@ -23,7 +23,7 @@ var continents = {
     },
     north_america: {
                projection: function (element) {
-            var projection = d3.geo.equirectangular()
+            var projection = d3.geo.mercator()
                 .center([-90, 40])
                 .rotate([4.4, 0])
                 .scale(400)
@@ -44,7 +44,7 @@ var continents = {
     },
     south_america: {
                 projection: function (element) {
-            var projection = d3.geo.equirectangular()
+            var projection = d3.geo.mercator()
                 .center([-50, -20])
                 .rotate([4.4, 0])
                 .scale(450)
@@ -61,7 +61,7 @@ var continents = {
     },
     europe: {
         projection: function (element) {
-            var projection = d3.geo.equirectangular()
+            var projection = d3.geo.mercator()
                 .center([20, 50])
                 .rotate([4.4, 0])
                 .scale(800)
@@ -83,7 +83,7 @@ var continents = {
     },
     asia: {
                 projection: function (element) {
-            var projection = d3.geo.equirectangular()
+            var projection = d3.geo.mercator()
                 .center([100 , 38])
                 .rotate([4.4, 0])
                 .scale(350)
@@ -158,6 +158,7 @@ function makeMap() {
         scope: 'world',
         element: document.getElementById('container1'),
         height: '95vh',
+        projection: 'mercator',
         fills: {
             defaultFill: '#ABDDA4'
         },
