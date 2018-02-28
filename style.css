@@ -1,14 +1,15 @@
-body{margin:0;}
+body{margin:0; font-family:sans-serif;}
 /*#container1{background-color:black;}*/
 #popup{
     position:absolute;
     width:100%;
     height:100%;
     top:0;
-    background-color:rgba(0,0,0,0.5);
+
 }
 
 #popup_insides{
+    position:relative;
     box-sizing:border-box;
      padding:30px;
     z-index:9999;
@@ -16,6 +17,45 @@ body{margin:0;}
     border-radius:30px;
     margin:0 auto;
     margin-top:30px;
-    background-color:white;
+    background-color:rgba(0,0,0,0.5);
 }
+#popup_insides > div:nth-child(n+2){
+    border-radius:15px;
+    border:2px solid white;
+    color:white;
+    width:100%;
+    padding:15px;
+    box-sizing:border-box;
+    margin-bottom:10px;
+}
+#popup_insides > div > h3 {
+    border-bottom:3px solid white;
+    font-weight:normal;
+    font-size:1rem;
+    margin:0;
+    text-transform:capitalize;
+}
+#popup_insides h2{
+    color:white;
+    font-size:2rem;margin:0;font-weight:normal;
+    text-transform: capitalize;
+}
+#popup_insides > div > ul{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    padding-left:8px;
+
+}
+#popup_insides > div > ul li{
+    width:calc(50% - 20px);
+    margin:0px 10px;
+}
+.political{background-color:#765276;}
+.geography{background-color:#404d33;}
+.health{background-color:#ca4d53;}
+.economic{background-color:#42506b;}
+.business{background-color:#bf613f;}
+.general{background-color:#765276;}
+
 .hidden{display:none;}

@@ -118,9 +118,10 @@ var view = window.location.href.split("?")[1];
 var continent;
 if (Object.keys(continents).includes(view))
     continent = view;
-else
+else{
     continent = 'undefined';
-
+    window.alert("Please select a continent.")
+}
 
 var countries = {};
 
@@ -200,14 +201,29 @@ function addListeners(continent) {
     continents[continent].codes.forEach(function (code) {
         if (document.querySelector("." + code) ){
 
-            document.querySelector("." + code).addEventListener('click', function () {
+            document.querySelector("." + code).addEventListener('click', function (event) {
                 createpopup(code);
-            })
+                event.preventDefault();
+    },false);
+                document.querySelector("." + code).addEventListener("touchstart",function (event) {
+        createpopup(code);
+    event.preventDefault();
+    },false);
+
         }
     });
 
-    document.querySelector("#popup").addEventListener('click', function () {this.classList.add("hidden");})
+    document.querySelector("#popup").addEventListener("touchstart",function (event) {
+        this.classList.add("hidden");
+    event.preventDefault();
+    },false);
+    document.querySelector("#popup").addEventListener("click",function (event) {
+        this.classList.add("hidden");
+    event.preventDefault();
+    },false);
+
     document.querySelector("#popup_insides").addEventListener('click', cancel_cancel)
+        document.querySelector("#popup_insides").addEventListener("touchstart", cancel_cancel);
 }
 
 var template = Handlebars.compile(document.querySelector('#country_popup').innerHTML);
