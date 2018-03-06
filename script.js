@@ -119,8 +119,7 @@ var continent;
 if (Object.keys(continents).includes(view))
     continent = view;
 else{
-    continent = 'undefined';
-    window.alert("Please select a continent.")
+    continent = 'africa';
 }
 
 var countries = {};

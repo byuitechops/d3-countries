@@ -16,46 +16,54 @@ body{margin:0; font-family:sans-serif;}
     width:800px;
     border-radius:30px;
     margin:0 auto;
-    margin-top:30px;
+    margin-right:10%;/*Add a media screen that ignores this?*/
+    margin-top:15px;
     background-color:rgba(0,0,0,0.5);
+    font-size:.8em;
 }
 #popup_insides > div:nth-child(n+2){
     border-radius:15px;
     border:2px solid white;
     color:white;
-    width:100%;
-    padding:15px;
+    width:calc(50% - px);
+    padding:0;
     box-sizing:border-box;
     margin-bottom:10px;
+    display:flex; flex-direction:row;
+    justify-content:center; align-items:center;
 }
-#popup_insides > div > h3 {
+#popup_insides > div:nth-child(n+2) img{
+    height:100px; flex:0 0 15%; align-self:flex-start;
+}
+#popup_insides > div:nth-child(n+2) div{
+    height:90%; flex:0 0 85%; display:flex; flex-direction:column; justify-content:space-between;
+}
+#popup_insides > div:nth-child(n+2) div > h3{
+ border-bottom:2px solid white; margin:0;margin-top:25px;margin-right:15px;
+}
+
+#popup_insides > div img{width:15%;}
+#popup_insides > div  h3 {
+    width:85%;
     border-bottom:3px solid white;
-    font-weight:normal;
+
     font-size:1rem;
     margin:0;
-    text-transform:capitalize;
+    text-transform:uppercase;
 }
 #popup_insides h2{
     color:white;
-    font-size:2rem;margin:0;font-weight:normal;
-    text-transform: capitalize;
+    font-size:3em;margin:0;font-weight:normal;
+    text-transform:uppercase;
 }
-#popup_insides > div > ul{
-    display:flex;
-    flex-direction:row;
-    flex-wrap:wrap;
-    padding-left:8px;
 
-}
-#popup_insides > div > ul li{
-    width:calc(50% - 20px);
-    margin:0px 10px;
-}
-.political{background-color:#765276;}
-.geography{background-color:#404d33;}
-.health{background-color:#ca4d53;}
-.economic{background-color:#42506b;}
-.business{background-color:#bf613f;}
-.general{background-color:#765276;}
+
+
+.political{background-color:#af4f94;}
+.geography{background-color:#327fa5;}
+.health{background-color:#b74e53;}
+.economic{background-color:#3158a8;}
+.business{background-color:#af644f;}
+.general{background-color:#ad7e50;}
 
 .hidden{display:none;}
