@@ -149,7 +149,6 @@ getCountries.send();
 
 
 
-
 //basic map config with custom fills, mercator projection
 function makeMap() {
 

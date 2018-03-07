@@ -1,0 +1,80 @@
+body{margin:0; font-family:sans-serif;}
+/*#container1{background-color:black;}*/
+#popup{
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+
+}
+
+#popup_insides{
+    position:relative;
+    box-sizing:border-box;
+     padding:30px 30px 0px 30px;
+    z-index:9999;
+    width:800px;
+    border-radius:30px;
+    margin:0 auto;
+    margin-top:15px;
+    background-color:rgba(0,0,0,0.5);
+    font-size:.8em;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+}
+#popup_insides > div:first-child{
+    width:100%;
+    margin-bottom:15px;
+}
+#popup_insides > div:nth-child(n+2){
+
+    border-radius:15px;
+    border:2px solid white;
+    color:white;
+    width:calc(50% - 15px);
+    padding:0;
+    box-sizing:border-box;
+    margin-bottom:30px;
+    display:flex; flex-direction:row;
+    justify-content:center; align-items:center;
+}
+#popup_insides > div:nth-child(n+2) img{
+    height:100px; flex:0 0 15%; align-self:flex-start;
+}
+#popup_insides > div:nth-child(n+2) div{
+    height:90%; flex:0 0 85%; display:flex; flex-direction:column; justify-content:flex-start;
+    padding-right:15px;padding-bottom:15px;box-sizing:border-box;
+}
+#popup_insides > div:nth-child(n+2) div > h3{
+ border-bottom:2px solid white; margin:0;margin-top:25px;margin-right:15px;
+}
+#popup_insides > div:nth-child(n+2) div > ul {
+    padding-left:1.5em;
+}
+
+#popup_insides > div img{width:15%;}
+#popup_insides > div  h3 {
+    width:85%;
+    border-bottom:3px solid white;
+
+    font-size:1rem;
+    margin:0;
+    text-transform:uppercase;
+}
+#popup_insides h2{
+    color:white;
+    font-size:3em;margin:0;font-weight:normal;
+    text-transform:uppercase;
+}
+
+
+
+.political{background-color:#af4f94;}
+.geography{background-color:#327fa5;}
+.health{background-color:#b74e53;}
+.economic{background-color:#3158a8;}
+.business{background-color:#af644f;}
+.general{background-color:#ad7e50;}
+
+.hidden{display:none;}
