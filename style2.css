@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600i');
 body{margin:0; font-family:sans-serif;}
 
-svg{height:calc(100vh - 15px);width:calc(100vw);}
+
+svg{height:calc(100vh - 15px);width:calc(100vw); }
 /*#container1{background-color:black;}*/
 #popup{
     position:absolute;
