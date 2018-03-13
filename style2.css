@@ -103,7 +103,7 @@ svg{height:calc(100vh - 15px);width:calc(100vw); }
     width:100%;
 
 }
-
+        #popup_insides > div img {display:none;}
     #popup_insides{
         font-size:1.4em;
     }
