@@ -23,7 +23,7 @@ getCountries.onreadystatechange = function () {
         addListeners();
     }
 };
-getCountries.open("GET", "../countries.csv", true);
+getCountries.open("GET", "./countries.csv", true);
 getCountries.send();
 
 
