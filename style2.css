@@ -82,3 +82,29 @@ svg{height:calc(100vh - 15px);width:calc(100vw); }
 .general{background-color:#ad7e50;}
 
 .hidden{display:none;}
+
+@media only screen and (max-width: 900px) {
+    #popup_insides > div:nth-child(n+2){
+
+    width:100%;
+
+}
+    #popup_insides{
+        font-size:1.4em;
+        width:100%;
+    }
+}
+
+@media only screen
+    and (min-device-width : 300px)
+    and (max-device-width: 600px) {
+    #popup_insides > div:nth-child(n+2){
+
+    width:100%;
+
+}
+
+    #popup_insides{
+        font-size:1.4em;
+    }
+}

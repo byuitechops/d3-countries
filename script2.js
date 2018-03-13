@@ -50,7 +50,6 @@ function addListeners() {
     document.querySelectorAll("#Sudan path, #Sudan text").forEach(function (child) {
             child.addEventListener('click', function (event) {
                 createpopup(countries["SDN"]);
-                console.log("what's going on")
                 event.preventDefault();
             }, false);
            child.addEventListener("touchend", function (event) {
