@@ -9,6 +9,7 @@ svg{height:calc(100vh - 15px);width:calc(100vw); }
     width:100%;
     height:100%;
     top:0;
+    z-index:9999;
 
 }
 
