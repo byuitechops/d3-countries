@@ -1,5 +1,5 @@
 // GRAB THE CONTINENT NAME FOR SORTING LATER.
-var continent = document.querySelector("#theMap").dataset.continent;
+var continent = document.querySelector("#theMap").getAttribute('data-continent');
 var countries = {};
 
 var getCountries = new XMLHttpRequest();
