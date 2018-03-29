@@ -2,7 +2,7 @@
 body{margin:0; font-family:sans-serif;}
 
 
-svg{width:calc(100vw); }
+svg{width:calc(100vw - 20px); }
 /*#container1{background-color:black;}*/
 #popup{
     position:absolute;
