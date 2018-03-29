@@ -66,5 +66,12 @@ function createpopup(code) {
     if (popup.parentElement.classList.contains("hidden")) {
         popup.parentElement.classList.remove("hidden");
     }
-    popup.innerHTML = template(country);
+    popup.innerHTML = template(country) + "<div id='close_popup'>X</div>";
+    document.querySelector("#close_popup").addEventListener('click', hide_popup);
 }
+
+function hide_popup(){
+    var popup = document.querySelector("#popup");
+    popup.classList.add("hidden");
+}
+
