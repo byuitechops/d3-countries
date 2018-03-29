@@ -24,7 +24,8 @@ function addListeners() {
     Object.keys(countries).forEach(function (country) {
         selector = "#" + countries[country].id + " path, #" + countries[country].id + " text";
         console.log(selector)
-        [...document.querySelectorAll(selector)].forEach(function (child) {
+        var edge_lord = Array.from(document.querySelectorAll(selector))
+        edge_lord.forEach(function (child) {
             child.addEventListener('click', function (event) {
                 createpopup(countries[country].id);
                 event.preventDefault();
