@@ -66,7 +66,7 @@ function createpopup(code) {
     if (popup.parentElement.classList.contains("hidden")) {
         popup.parentElement.classList.remove("hidden");
     }
-    popup.innerHTML = template(country) + "<div id='close_popup'>X</div>";
+    popup.innerHTML = template(country) + "<div id='close_popup'>+</div>";
     document.querySelector("#close_popup").addEventListener('click', hide_popup);
 }
 
