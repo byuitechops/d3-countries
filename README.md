@@ -18,9 +18,9 @@ Commissioned by: Sheleen Ockler.
 
 ## What does it do?
 
-**getCountries()**: using the continent selector, parses "countries.csv" for countries in that continent and fills the "countries" object on the script.
+**getCountries()**: Using the continent selector, parses "countries.csv" for countries in that continent and fills the "countries" object on the script.
 
-**addListeners()**: iterates through the "countries" object and creates click/touch events that toggle the popup window.
+**addListeners()**: Iterates through the "countries" object and creates click/touch events that toggle the popup window.
 
 **cancel_cancel()**: Prevents the "touch" and "click" events from overlapping and firing twice.
 
