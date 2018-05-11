@@ -1,4 +1,4 @@
-# d3_countries
+# d3-countries
 
 Commissioned by: Sheleen Ockler.
 
