@@ -9,7 +9,9 @@ svg > g:not([id*="Master"]):hover{
     fill-opacity:.7;
     cursor: pointer;
 }
-
+#accessibleLink{
+    position: absolute;
+}
 #popup {
     position: absolute;
     width: 100%;
