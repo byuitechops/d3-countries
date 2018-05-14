@@ -5,16 +5,8 @@ Commissioned by: Sheleen Ockler.
 ## Important files
 
 * countries.csv - Contains the country data for the tool. Has all countries arranged by continent and with other headers used on the map.
-* index.html - test page, demonstrates the tool in Africa. 
 * africa, asia, central_europe, middle_east, south_america.html - The individual maps based on continent
-* script2.js and style2.css - These are the updated script and style files. Old ones preserved to make changes as desired.
-
-## Old/Unused files
-
-* africa.json
-* script.js
-* style.js
-* worldmap.js
+* script.js and style.css - These are the updated script and style files. Old ones preserved to make changes as desired.
 
 ## What does it do?
 
