@@ -2,12 +2,13 @@
 body {
     margin: 0;
     font-family: sans-serif;
+    background-color: blanchedalmond;
+    height:99vh;
 }
-svg {
-    width: calc(100vw - 20px);
+svg > g:not([id*="Master"]):hover{
+    fill-opacity:.7;
+    cursor: pointer;
 }
-
-/*#container1{background-color:black;}*/
 
 #popup {
     position: absolute;
