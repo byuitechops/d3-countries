@@ -1,6 +1,7 @@
 # d3-countries
 
 Commissioned by: Sheleen Ockler.
+currently used in this course: [Introduction to International Studies](https://byui.instructure.com/courses/4383)
 
 ## Important files
 
