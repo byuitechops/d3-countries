@@ -2,6 +2,7 @@
 body {
     margin: 0;
     font-family: sans-serif;
+    background-color:white;
     height:99vh;
 }
 svg > g:not([id*="Master"]):hover{
