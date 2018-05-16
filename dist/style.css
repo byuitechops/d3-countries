@@ -12,6 +12,14 @@ svg > g:not([id*="Master"]):hover{
 #accessibleLink{
     position: absolute;
 }
+#attribution {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    margin-right:1em;
+    font-size:8px;
+    text-align: end;
+}
 #popup {
     position: absolute;
     width: 100%;

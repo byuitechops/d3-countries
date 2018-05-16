@@ -4,11 +4,18 @@ Commissioned by: Sheleen Ockler.
 
 Currently used in this course: [Introduction to International Studies](https://byui.instructure.com/courses/4383)
 
-## Important files
+## Files
 
-* countries.csv - Contains the country data for the tool. Has all countries arranged by continent and with other headers used on the map.
-* africa, asia, central_europe, middle_east, south_america.html - The individual maps based on continent
-* script.js and style.css - These are the updated script and style files. Old ones preserved to make changes as desired.
+### dist
+  - africa, asia, central_europe, middle_east, south_america.html - The individual maps based on continent
+  - style.css - our style sheet
+  - Icon1.svg, Icon2.svg, Icon3.svg, Icon4.svg, Icon5.svg, Icon6.svg - the icons
+  - bundle.js - all of the src files bundled into one
+
+### src
+  - script.js - the main script
+  - countries.csv - Contains the country data for the tool. Has all countries arranged by continent and with other headers used on the map.
+  - template.hbs - the handlebars file for creating the popup
 
 ## What does it do?
 

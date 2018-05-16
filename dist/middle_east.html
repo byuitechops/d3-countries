@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <?xml version="1.0" encoding="utf-8"?>
 <meta charset="utf-8">
+<html>
 
 <head>
-		<script src="lib/d3-dsv.v1.min.js"></script>
-		<script src="lib/handlebars.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="lib/style.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-		<a id="accessibleLink" href="#accessible">Accessible Version</a>
-
+	<a id="accessibleLink" href="#accessible">Accessible Version</a>
+	<pre id="attribution"></pre>
 	<svg id="theMap" data-continent="Middle East" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 	  preserveAspectRatio="xMidYMid meet" viewBox="0 0 1765 1109.2" width="100%" height="100%">
 		<g id="Master_x5F_Land">
@@ -4897,121 +4896,11 @@
 		</g>
 	</svg>
 
-
-
-
-
-
-
 	<div id="popup" class="hidden">
 		<div id="popup_insides">
-
 			Loading...
 		</div>
 	</div>
-
-
-
-	<script id="country_popup" type="text/x-handlebars-template">
-		<div class="country_header">
-			<h2>{{this.Country}}</h2>
-		</div>
-		<div class="general">
-			<img src="./img/Icons6.svg" />
-			<div>
-				<h3>General</h3>
-				<ul>
-					<li>
-						<strong>Literacy Rate:</strong> {{this.lr}}</li>
-					<li>
-						<strong>Religions:</strong> {{this.Religions}}</li>
-					<li>
-						<strong>Languages:</strong> {{this.Languages}}</li>
-					<li>
-						<strong>Population:</strong> {{this.Population}}</li>
-				</ul>
-			</div>
-		</div>
-		<div class="geography">
-			<img src="./img/Icons3.svg" />
-			<div>
-				<h3>Geography</h3>
-				<ul>
-					<li>
-						<strong>Capital:</strong> {{this.Capital}}</li>
-					<li>
-						<strong>Primary Natural Resources:</strong> {{this.pnr}}</li>
-					<li>
-						<strong>Topography:</strong> {{this.Topography}}</li>
-					<li>
-						<strong>Climate:</strong> {{this.Climate}}</li>
-				</ul>
-			</div>
-		</div>
-
-
-		<div class="health">
-			<img src="./img/Icons2.svg" />
-			<div>
-				<h3>Health</h3>
-
-				<ul>
-					<li>
-						<strong>Life Expectancy:</strong> {{this.le}}</li>
-					<li>
-						<strong>Infant Mortality Rate:</strong> {{this.imr}}</li>
-					<li>
-						<strong>Primary Causes of Death:</strong> {{this.pcod}}</li>
-				</ul>
-			</div>
-		</div>
-
-		<div class="economic">
-			<img src="./img/Icons4.svg" />
-			<div>
-				<h3>Economic</h3>
-				<ul>
-					<li>
-						<strong>GDP Per Capita:</strong> {{this.GDPPC}}</li>
-					<li>
-						<strong>Currency-Exchange Rate:</strong> {{this.cer}}</li>
-					<li>
-						<strong>Big Mac Index:</strong> {{this.bmi}}</li>
-					<li>
-						<strong>GDP Growth:</strong> {{this.gdpg}}</li>
-					<li>
-						<strong>Income Inequality:</strong> {{this.ii}}</li>
-				</ul>
-			</div>
-		</div>
-		<div class="political">
-
-			<img src="./img/Icon1.svg" />
-			<div>
-				<h3>Political</h3>
-				<ul>
-					<li>
-						<strong>Freedomhouse Score:</strong> {{this.fhs}}</li>
-					<li>
-						<strong>Type of Government:</strong> {{gov}}</li>
-				</ul>
-			</div>
-		</div>
-		<div class="business">
-			<img src="./img/Icons5.svg" />
-			<div>
-				<h3>Business</h3>
-				<ul>
-					<li>
-						<strong>Corruption Perceptions Index:</strong> {{this.cpi}}</li>
-					<li>
-						<strong>Heritage Index of Economic Freedom:</strong> {{this.hioef}}</li>
-				</ul>
-			</div>
-		</div>
-
-	</script>
-	<script src="lib/script.js">
-	</script>
-
+	<script src="bundle.js"></script>
 </body>
+</html>

@@ -1,25 +1,20 @@
-// GRAB THE CONTINENT NAME FOR SORTING LATER.
-var continent = document.querySelector("#theMap").getAttribute('data-continent');
-var countries = {};
+import data from './countries.csv'
+import template from './template.hbs'
 
-var getCountries = new XMLHttpRequest();
-getCountries.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        d3.csvParse(this.responseText).forEach(function (country) {
-            if (country.Continent === continent) {
-                countries[country.id] = country;
-            }
-        })
-        addListeners();
-        if(window.location.hash.match(/accessible/i)){
-            document.querySelector('body').innerHTML = '<a href="#">Return</a>'+Object.values(countries).map(template).join('\n')
-            document.querySelectorAll('img').forEach(img => img.parentNode.removeChild(img))
-            document.querySelectorAll('link').forEach(link => link.parentNode.removeChild(link))
-        }
+// // GRAB THE CONTINENT NAME FOR SORTING LATER.
+var continent = document.querySelector("#theMap").getAttribute('data-continent');
+var countries = {}
+data.forEach(function (country) {
+    if (country.Continent === continent) {
+        countries[country.id] = country;
     }
-};
-getCountries.open("GET", "lib/countries.csv", true);
-getCountries.send();
+})
+addListeners()
+if(window.location.hash.match(/accessible/i)){
+    document.querySelector('body').innerHTML = '<a href="#">Return</a>'+Object.values(countries).sort((a,b) => (b.id < a.id)*2-1).map(template).join('\n')
+    document.querySelectorAll('img').forEach(img => img.parentNode.removeChild(img))
+    document.querySelectorAll('link').forEach(link => link.parentNode.removeChild(link))
+}
 
 function addListeners() {
     var selector = "";
@@ -39,9 +34,6 @@ function addListeners() {
         });
     })
 
-
-
-
     document.querySelector("#popup").addEventListener("touchend", function (event) {
         this.classList.add("hidden");
         event.preventDefault();
@@ -53,8 +45,6 @@ function addListeners() {
     document.querySelector("#popup_insides").addEventListener('click', cancel_cancel);
     document.querySelector("#popup_insides").addEventListener("touchend", cancel_cancel);
 }
-
-var template = Handlebars.compile(document.querySelector('#country_popup').innerHTML);
 
 function cancel_cancel(event) {
     event.stopPropagation();
