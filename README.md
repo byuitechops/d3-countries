@@ -17,6 +17,8 @@ Currently used in this course: [Introduction to International Studies](https://b
   - countries.csv - Contains the country data for the tool. Has all countries arranged by continent and with other headers used on the map.
   - template.hbs - the handlebars file for creating the popup
 
+use `npm run build` to compile the src files into `bundle.js`
+
 ## What does it do?
 
 **getCountries()**: Using the continent selector, parses "countries.csv" for countries in that continent and fills the "countries" object on the script.
