@@ -1,4 +1,4 @@
-import data from './countries.csv'
+import data from './countries-dummyData-smart.csv'
 import template from './template.hbs'
 
 // // GRAB THE CONTINENT NAME FOR SORTING LATER.

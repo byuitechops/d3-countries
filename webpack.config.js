@@ -1,5 +1,5 @@
 module.exports = {
-  mode: 'development', // The three comments below are about mode:
+  mode: 'production', // The three comments below are about mode:
   // 'development' seemed to give a more readable version. 
   // 'production' gives a minimized version
   // 'none' seems like a hybrid. It's weird
